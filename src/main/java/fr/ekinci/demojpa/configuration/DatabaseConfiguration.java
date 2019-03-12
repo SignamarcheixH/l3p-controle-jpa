@@ -1,6 +1,8 @@
 package fr.ekinci.demojpa.configuration;
 
+import fr.ekinci.demojpa.model.CompanyEntity;
 import fr.ekinci.demojpa.model.ProductEntity;
+import fr.ekinci.demojpa.repository.CompanyRepository;
 import fr.ekinci.demojpa.repository.ProductRepository;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -20,8 +22,8 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 // Analyze packages containing the Entity classes and Reposity interfaces/classes
 @EnableJpaRepositories(basePackageClasses = {
-	ProductEntity.class,
-	ProductRepository.class
+	CompanyEntity.class,
+	CompanyRepository.class
 })
 public class DatabaseConfiguration {
 	private static final String JPA_PACKAGES_TO_SCAN = "fr.ekinci.demojpa.model";
